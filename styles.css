@@ -39,17 +39,24 @@ button:hover {
 }
 
 .loading-bar {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 5px;
-    width: 0;
-    background-color: #fff;
-    opacity: 0;
-    transition: width 3s linear, opacity 0.5s ease-out;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 5px;
+  width: 0;
+  background-color: #fff;
+  animation: none;
 }
 
-#generate-btn.loading .loading-bar {
+@keyframes loading {
+  0% {
+    width: 0;
+  }
+  100% {
     width: 100%;
-    opacity: 1;
+  }
+}
+
+.loading .loading-bar {
+  animation: loading 3s linear forwards;
 }
