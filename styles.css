@@ -33,3 +33,23 @@ button:hover {
     color: #333;
     margin-top: 1rem;
 }
+
+.button-container {
+    position: relative;
+}
+
+.loading-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    width: 0;
+    background-color: #fff;
+    opacity: 0;
+    transition: width 3s linear, opacity 0.5s ease-out;
+}
+
+#generate-btn.loading .loading-bar {
+    width: 100%;
+    opacity: 1;
+}
