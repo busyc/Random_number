@@ -1,62 +1,38 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f7f7f7;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ccc;
+  margin: 0;
 }
 
-main {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 2rem;
+.slot-machine {
+  display: flex;
+  background-color: #444;
+  padding: 20px;
+  border-radius: 5px;
 }
 
-button {
-    font-size: 1.2rem;
-    padding: 1rem 2rem;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 1rem;
+.slot {
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
+  width: 50px;
+  margin: 0 10px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  padding: 10px;
 }
-
-button:hover {
-    background-color: #45a049;
-}
-
-#random-number {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-    margin-top: 1rem;
-}
-
-.button-container {
-    position: relative;
-}
-
-.loading-bar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 5px;
-  width: 0;
-  background-color: #fff;
-  animation: none;
-}
-
-@keyframes loading {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
-}
-
-.loading .loading-bar {
-  animation: loading 3s linear forwards;
+/* Add this to your existing styles.css file */
+.start-button {
+  display: inline-block;
+  background-color: #28a745;
+  color: #fff;
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  user-select: none;
 }
