@@ -9,11 +9,11 @@ function rollSlot(slot) {
 
 function rollSlot(slot) {
   const min = 0;
-  const max = 9;
+  const max = 3;
 
   // Define the custom probability distribution
-  const probabilities = [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1];
-  probabilities[7] = 0.4; // Set a higher probability for the number 7
+  const probabilities = [0.1, 0.1, 0.1, 0.1];
+  probabilities[3] = 0.4; // Set a higher probability for the number 7
 
   // Generate a random number based on the custom probability distribution
   const randomNumber = getRandomNumberWithProbability(min, max, probabilities);
