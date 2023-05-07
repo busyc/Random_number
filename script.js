@@ -1,15 +1,30 @@
-var clickCount = 0;
+function rollSlot(slot) {
+  const min = 0;
+  const max = 9;
+  const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+  slot.textContent = randomNumber;
+}
 
-document.getElementById('generate-btn').addEventListener('click', function() {
-    var button = document.getElementById('generate-btn');
-    button.classList.add('loading');
+function checkWinning(slots) {
+  const values = Array.from(slots).map(slot => parseInt(slot.textContent, 10));
+  const allEqual = values.every(value => value === values[0]);
+  if (allEqual) {
+    alert('Congratulations, you won!');
+  }
+}
 
-    setTimeout(function() {
-        var randomNumber = Math.floor(Math.random() * 100) + 1;
-        document.getElementById('random-number').innerHTML = randomNumber;
-        button.classList.remove('loading');
+function startSlotMachine() {
+  const slots = document.querySelectorAll('.slot');
+  slots.forEach((slot) => {
+    rollSlot(slot);
+  });
+  checkWinning(slots);
+}
 
-        clickCount++;
-        document.getElementById('click-counter').innerHTML = 'Button clicks: ' + clickCount;
-    }, 3000);
-});
+// Add a start button to the game
+const startButton = document.createElement('button');
+startButton.textContent = 'Start';
+startButton.classList.add('start-button');
+document.body.appendChild(startButton);
+
+startButton.addEventListener('click', startSlotMachine);
