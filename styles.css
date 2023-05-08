@@ -5,6 +5,7 @@ body {
   height: 100vh;
   background-color: #ccc;
   margin: 0;
+  font-family: Arial, sans-serif;
 }
 
 .slot-machine {
@@ -24,7 +25,7 @@ body {
   border-radius: 5px;
   padding: 10px;
 }
-/* Add this to your existing styles.css file */
+
 .start-button {
   display: inline-block;
   background-color: #28a745;
