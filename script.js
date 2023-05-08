@@ -1,28 +1,14 @@
-/* 
 function rollSlot(slot) {
-  const min = 0;
-  const max = 9;
-  const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-  slot.textContent = randomNumber;
-}
-*/
-
-function rollSlot(slot) {
-  const min = 0;
-  const max = 3;
+  const min = 1;
+  const max = 5;
 
   // Define the custom probability distribution
-  const probabilities = [0.1, 0.1, 0.1, 0.1];
-  probabilities[3] = 0.4; // Set a higher probability for the number 7
+  const probabilities = [0, 0.15, 0.15, 0.4, 0.15, 0.15];
 
   // Generate a random number based on the custom probability distribution
   const randomNumber = getRandomNumberWithProbability(min, max, probabilities);
 
-  slot.classList.add('rolling');
-  setTimeout(() => {
-    slot.textContent = randomNumber;
-    slot.classList.remove('rolling');
-  }, 1000);
+  slot.textContent = randomNumber;
 }
 
 function getRandomNumberWithProbability(min, max, probabilities) {
@@ -55,10 +41,5 @@ function startSlotMachine() {
   checkWinning(slots);
 }
 
-// Add a start button to the game
-const startButton = document.createElement('button');
-startButton.textContent = 'Start';
-startButton.classList.add('start-button');
-document.body.appendChild(startButton);
-
+const startButton = document.querySelector('.start-button');
 startButton.addEventListener('click', startSlotMachine);
